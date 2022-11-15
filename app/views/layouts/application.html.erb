@@ -22,11 +22,13 @@
       <div class="navbar-nav">
         <%= link_to "Home", root_path, class:"nav-link active" %>
         <%= link_to "Foods", foods_path, class:"nav-link active" %>
-        <%= button_to "Sign Out", method: :delete, class:"nav-link" %>
+        <%= button_to "Sign Out", '/users/sign_out', method: :delete, class: "nav-link" %>
       </div>
     </div>
   </div>
 </nav>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
