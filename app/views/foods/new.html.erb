@@ -5,11 +5,11 @@
     </div>
     <div>
     <%= form.label :measurement_unit %>
-    <%= form.text_area :measurement_unit %>
+    <%= form.number_field :measurement_unit %>
     </div>
     <div>
     <%= form.label :price %>
-    <%= form.text_area :price %>
+    <%= form.number_field :price %>
     </div>
     <%= form.submit "Add Food" %>
   <% end %>

@@ -12,8 +12,7 @@ class FoodsController < ApplicationController
   end
 
   def create
-    food = Food.new(name: food_params[:name], measurement_unit: food_params[:measurement_unit],
-                    price: food_params[:price])
+    food = Food.new(food_params)
     p food
     flash[:notice] = if food.save
                        'Food created successfully'

@@ -1,5 +1,5 @@
 <%= link_to new_food_path do  %>
-    <button class:"p-5">Add Food</button>
+    <button class="btn btn-success me-0 mb-5 mt-5">Add Food</button>
   <% end %>
 
 <table class="table table-striped">
@@ -17,7 +17,7 @@
       <td><%= food.measurement_unit %></td>
       <td><%= food.price %></</td>
       <td> <%= form_with url: food_path(food.id), method: :delete do |form| %>
-        <%= form.submit 'Delete' %>
+        <%= form.submit 'Delete', class: "btn btn-danger" %>
       <% end %></td>
     </tr>
     <% end %>
