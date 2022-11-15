@@ -11,9 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_11_15_083508) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "foods", force: :cascade do |t|
     t.string "name"
     t.integer "measurement_unit"
@@ -26,7 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_15_083508) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.integer "user_id"
     t.index ["user_id"], name: "index_inventories_on_user_id"
   end
 
@@ -34,8 +31,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_15_083508) do
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "inventory_id"
-    t.bigint "food_id"
+    t.integer "inventory_id"
+    t.integer "food_id"
     t.index ["food_id"], name: "index_inventory_foods_on_food_id"
     t.index ["inventory_id"], name: "index_inventory_foods_on_inventory_id"
   end
@@ -44,8 +41,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_15_083508) do
     t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "recipe_id"
-    t.bigint "food_id"
+    t.integer "recipe_id"
+    t.integer "food_id"
     t.index ["food_id"], name: "index_recipe_foods_on_food_id"
     t.index ["recipe_id"], name: "index_recipe_foods_on_recipe_id"
   end
@@ -58,7 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_15_083508) do
     t.boolean "public"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.integer "user_id"
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
