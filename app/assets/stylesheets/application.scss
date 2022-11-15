@@ -1,0 +1,43 @@
+.page_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.a_recipe {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-top: 10px;
+  width: 70%;
+  border: 1px solid black;
+  padding: 20px;
+
+  .first_section {
+    margin: auto 20px;
+    width: 20%;
+    text-align: center;
+
+    .recipe_details_link {
+      color: black;
+      text-decoration: none;
+    }
+
+    input[type=submit] {
+      background-color: white;
+      border: none;
+      color: blue;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+
+  .second_section {
+    margin: auto 20px;
+    font-size: 18px;
+  }
+}
