@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   get '/recipes', to: "recipe#index"
   get '/public_recipes', to: "recipe#public_recipes"
+  get '/recipes/:id', to: "recipe#show"
+  get '/add_food/:id', to: "recipe#new"
+  post '/add_food/:id', to: "recipe#create"
   # delete '/recipes/:id', to: "recipe#destroy"
 
 end
