@@ -6,9 +6,9 @@ class RecipeController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:id])
-    if @recipe.destroy
-      redirect_to recipe_path
-    end
+    return unless @recipe.destroy
+
+    redirect_to recipe_path
   end
 
   def public_recipes
