@@ -1,0 +1,15 @@
+<%= form_with model: @food, url: foods_url do |form| %>
+    <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    </div>
+    <div>
+    <%= form.label :measurement_unit %>
+    <%= form.text_area :measurement_unit %>
+    </div>
+    <div>
+    <%= form.label :price %>
+    <%= form.text_area :price %>
+    </div>
+    <%= form.submit "Add Food" %>
+  <% end %>
