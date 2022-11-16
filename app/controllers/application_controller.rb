@@ -1,11 +1,12 @@
 class ApplicationController < ActionController::Base
-  def current_user
-    @user = User.first
   before_action :authenticate_user!
   protect_from_forgery with: :exception
 
   before_action :update_allowed_parameters, if: :devise_controller?
 
+  def current_user
+    @user = User.first
+  end
   protected
 
   def update_allowed_parameters
