@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   def current_user
     @user = User.first
   end
+
   protected
 
   def update_allowed_parameters
