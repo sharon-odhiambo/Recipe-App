@@ -14,8 +14,10 @@ Rails.application.routes.draw do
   get '/recipes', to: "recipe#index"
   get '/public_recipes', to: "recipe#public_recipes"
   get '/recipes/:id', to: "recipe#show"
-  get '/add_food/:id', to: "recipe#new"
-  post '/add_food/:id', to: "recipe#create"
-  # delete '/recipes/:id', to: "recipe#destroy"
+  get '/new_recipe', to: "recipe#new_recipe"
+  post '/add_new_recipe', to: "recipe#add_new_recipe"
+  
+  get 'recipes/:recipe_id/add_food/', to: "recipefood#new"
+  post 'recipes/:recipe_id/add_food/', to: "recipefood#create"
 
 end
