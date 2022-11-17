@@ -1,0 +1,34 @@
+<div class="m-5">
+<h1> <%= Inventory.name %> </h1>
+<div class="m-5 d-flex justify-content-end">
+<%= link_to new_inventory_inventory_food_path(@inventory), class: "btn btn-success" do  %>
+  Add Food
+<% end %>
+</div>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Food</th>
+      <th scope="col">quantity</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody class="border border-none">
+  <% @inventory_food.each do |inv| %>
+    <tr>
+      <td><%= inv.food.name %></td>
+      <td><%= inv.quantity%></td>
+       <td> <%= form_with url: inventory_inventory_food_path(inv.id), method: :delete do |form| %>
+        <%= form.submit 'Delete', class: "btn btn-danger" %>
+      <% end %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<div class="foot">
+  <%= link_to "Back to inventories", inventories_path %>
+  <%= button_to "Delete this inventory", @inventory, method: :delete %>
+</div>

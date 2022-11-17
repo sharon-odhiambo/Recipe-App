@@ -1,0 +1,14 @@
+<h1>New inventory</h1>
+
+<%= form_with model: @inventory, url: inventories_url do |form| %>
+    <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    </div>
+     <%= form.submit "Create" %>
+<br>
+<%end%>
+
+<div>
+  <%= link_to "Back to inventories", inventories_path %>
+</div>
