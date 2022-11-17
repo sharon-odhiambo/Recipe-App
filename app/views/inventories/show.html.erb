@@ -18,10 +18,8 @@
   <% @inventory_food.each do |inv| %>
     <tr>
       <td><%= inv.food.name %></td>
-      <td><%= inv.quantity%></td>
-       <td> <%= form_with url: inventory_inventory_food_path(inv.id), method: :delete do |form| %>
-        <%= form.submit 'Delete', class: "btn btn-danger" %>
-      <% end %></td>
+      <td><%= inv.quantity%><%= inv.food.measurement_unit %></td>
+       <td> <%= button_to "Delete", inventory_inventory_food_path(inv.id), method: :delete, class: "btn btn-danger" %></td>
     </tr>
     <% end %>
   </tbody>

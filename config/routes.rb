@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  devise_for :users
+  devise_for :users, sign_out_via: [:get, :post]
   root "users#index"
   resources :foods, only: [:index, :show, :new, :create, :destroy]
   resources :inventories, only: [:index, :show, :new, :create, :destroy] do

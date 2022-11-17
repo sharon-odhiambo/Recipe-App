@@ -12,17 +12,16 @@ class InventoriesController < ApplicationController
   def new
     @inventory = Inventory.new
   end
-  
-  def edit
-  end
+
+  def edit; end
 
   # POST /inventories or /inventories.json
   def create
     @inventory = Inventory.create(name: inventory_params[:name], user_id: current_user.id)
-    
+
     respond_to do |format|
       if @inventory.save
-        format.html { redirect_to inventory_url(@inventory), notice: "Inventory was successfully created." }
+        format.html { redirect_to inventory_url(@inventory), notice: 'Inventory was successfully created.' }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -32,16 +31,18 @@ class InventoriesController < ApplicationController
   def destroy
     @inventory = Inventory.find(params[:id])
     return unless @inventory.destroy
+
     redirect_to inventories_path
   end
 
   private
-    def set_inventory
-      @inventory = Inventory.find(params[:id])
-    end
 
-    def inventory_params
-      # params.fetch(:inventory, {})
-      params.require(:inventory).permit(:name)
-    end
+  def set_inventory
+    @inventory = Inventory.find(params[:id])
+  end
+
+  def inventory_params
+    # params.fetch(:inventory, {})
+    params.require(:inventory).permit(:name)
+  end
 end
