@@ -1,8 +1,6 @@
-<h1>New inventoryFood</h1>
+<h2>Add Food</h2>
 
-
-
-<%= form_for @inventoryfood, url: inventory_inventory_food_index_url  do |form| %>
+<%= form_with url: "/recipes/#{@recipe_id}/add_food", method: :post do |form| %>
   <div>
     <%= form.label :quantity %>
     <%= form.number_field :quantity %>
@@ -16,5 +14,5 @@
 <%end%>
 
 <div>
-  <%= link_to "Back to inventories", inventories_path %>
+  <a href="/recipe">Recipes</a> 
 </div>
