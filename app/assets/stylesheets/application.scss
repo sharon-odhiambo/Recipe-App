@@ -1,0 +1,101 @@
+.page_container {
+  display: flex;
+  flex-direction: column;
+}
+
+.a_recipe {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  margin-top: 10px;
+  width: 70%;
+  border: 1px solid black;
+  padding: 20px;
+
+  .first_section {
+    margin: auto 20px;
+    width: 20%;
+    text-align: center;
+
+    .recipe_details_link {
+      color: black;
+      text-decoration: none;
+    }
+
+    input[type=submit] {
+      background-color: white;
+      border: none;
+      color: blue;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 18px;
+    }
+  }
+
+  .second_section {
+    margin: auto 20px;
+    font-size: 18px;
+  }
+}
+
+.show_recipe_container {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    text-align: center;
+  }
+}
+
+.text_section {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 80%;
+
+  div {
+    margin: auto;
+    padding: 20px;
+  }
+}
+
+.button_section {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 80%;
+
+  a {
+    margin: auto;
+    margin-bottom: 30px;
+    border: 1px solid black;
+    padding: 5px;
+    box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.75);
+  }
+}
+
+.table_section {
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: auto;
+  }
+
+  td,
+  th {
+    border: 1px solid #ddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #ddd;
+  }
+}
