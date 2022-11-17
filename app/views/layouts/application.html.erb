@@ -23,7 +23,10 @@
         <%= link_to "Home", root_path, class:"nav-link active" %>
         <%= link_to "Foods", foods_path, class:"nav-link active" %>
         <%= link_to "Inventories", inventories_path, class:"nav-link active" %>
-        <%= link_to "Sign Out", '/users/sign_out', method: :delete, class: "nav-link" %>
+        <%= link_to "Recipes", '/recipes', class:"nav-link active" %>
+        <%= link_to "Public Recipes", '/public_recipes', class:"nav-link active" %>
+        <%= button_to "Sign Out", method: :delete, class:"nav-link" %>
+        <%= button_to "Sign Out", '/users/sign_out', method: :delete, class: "nav-link" %>
       </div>
     </div>
   </div>
