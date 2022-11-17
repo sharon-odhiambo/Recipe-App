@@ -17,7 +17,8 @@ class RecipeController < ApplicationController
 
   def add_new_recipe
     @new_recipe = Recipe.new(name: params[:name], description: params[:description],
-                             cooking_time: params[:cooking_time], preparation_time: params[:preparation_time], public: params[:public], user_id: current_user.id)
+                             cooking_time: params[:cooking_time], preparation_time: params[:preparation_time],
+                             public: params[:public], user_id: current_user.id)
     respond_to do |format|
       if @new_recipe.save
         format.html { redirect_to '/recipes', notice: 'Recipe was successfully created.' }
