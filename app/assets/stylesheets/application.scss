@@ -99,3 +99,52 @@
     background-color: #ddd;
   }
 }
+
+.title {
+    margin: 2px 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title a {
+    text-decoration: none;
+    background-color: rgb(63, 56, 40);
+    color: white;
+    padding: 2px 12px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: 0.3s;
+}
+
+.title a:hover {
+    color: black;
+    background-color: white;
+}
+
+#inventories {
+    margin: 20px 20%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.inventory {
+    height: 120px;
+    border: 2px solid black;
+    display: flex;
+    padding: 24px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inventory div h2 a {
+    text-decoration: none;
+    color: black;
+}
+
+.foot {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 30%;
+}
