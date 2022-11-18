@@ -1,0 +1,21 @@
+<div class="page_container">
+  <div class="title">
+    <h1>Recipes</h1>
+    <%= link_to "New Recipe", '/new_recipe' %>
+  </div>
+  <% @recipes.each do |a| %>
+    <div class="a_recipe">
+      <div class="first_section">
+        <a href='/recipes/<%=a.id%>' class="recipe_details_link">
+          <h3><%=a.name%></h3>
+        </a>
+        <%= form_with url: recipe_path(a.id), method: :delete do |form| %>
+          <%= form.submit 'REMOVE'%>
+        <% end %>
+      </div>
+      <div class="second_section">
+        <p><%=a.description%></p>
+      </div>
+    </div>
+  <% end %>
+</div>

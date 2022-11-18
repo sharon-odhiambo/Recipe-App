@@ -1,0 +1,57 @@
+<div class="show_recipe_container">
+  <h2><%=@recipe.name%></h2>
+  <div class="text_section">
+    <div>
+      <p>Preparation time: <%=@recipe.preparation_time%></p>
+      <p>Cooking time: <%=@recipe.cooking_time%></p>
+      <p>Steps go here...</p>
+    </div>
+    <div>
+      <%= form_with do |form|%>
+        <%= form.label :public, "Public" %>
+        <%= form.check_box :public, :checked => @recipe.public, :value => @recipe.public %>
+      <%end%>
+    </div>
+  </div>
+  <div class="button_section">
+  <!-- Trigger/Open The Modal -->
+  <button type="button" id="myBtn">Generate Shopping List</button>
+  
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+  
+    <!-- Modal content -->
+    <div class="modal-content d-flex">
+      <span class="close align-self-end">&times;</span>
+      <h4>Generate Shopping List</h4>
+      <p>Choose an inventory to use</p>
+      <div class="mb-2 d-flex justify-content-around gap-5 container-fluid">
+      <%= form_with url: "/shopping_list/#{@recipe.id}", method: :get do |f| %>
+      <%= select_tag "inventory",options_for_select(@inventories.map { |inv| [inv.name, inv.id] }), class: "border rounded" %>
+      <%= f.submit "Generate" %>
+        <% end %>
+     </div>
+  </div>
+  </div>
+  <a href='/recipes/<%=@recipe.id%>/add_food'>Add ingredient</a>
+  </div>
+  <div class="table_section">
+    <table>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+        <th>Action</th>
+      </tr>
+      <%@recipe_food.each do |rf|%>
+        <tr>
+          <td><%=rf.food.name%></td>
+          <td><%=rf.quantity%></td>
+          <td>$ <%=rf.food.price%></td>
+          <td><a href="">Modify</a>&nbsp<a href='/recipes/<%=@recipe.id%>/remove/<%=rf.id%>'>Remove</a>
+          </td>
+        </tr>
+      <%end%>
+    </table>
+  </div>
+</div>
