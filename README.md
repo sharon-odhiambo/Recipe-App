@@ -24,7 +24,7 @@ To get a local copy up and running follow these simple example steps.
     Use the following commands to
         - install necessary gems bundle install
         - install necessary javascript packages npm install
-        - run the development server rails server
+        - run the development server rails server - rails s
 
 ## Author
 
