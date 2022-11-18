@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   devise_for :users, sign_out_via: [:get, :post]
-  root "inventories#index"
+  root "foods#index"
   resources :foods, only: [:index, :show, :new, :create, :destroy]
   resources :inventories, only: [:index, :show, :new, :create, :destroy] do
     resources :inventory_food
