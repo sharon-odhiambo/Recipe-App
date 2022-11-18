@@ -5,6 +5,11 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field col-8">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "col-6 border border-1 border-grey p-2 rounded-1" %>
+  </div>
+
+  <div class="field col-8">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "col-6 border border-1 border-grey p-2 rounded-1" %>
   </div>

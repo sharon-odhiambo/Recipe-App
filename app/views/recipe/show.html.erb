@@ -26,7 +26,7 @@
       <h4>Generate Shopping List</h4>
       <p>Choose an inventory to use</p>
       <div class="mb-2 d-flex justify-content-around gap-5 container-fluid">
-      <%= form_with url: recipe_shopping_url, method: :post do |f| %>
+      <%= form_with url: "/shopping_list/#{@recipe.id}", method: :get do |f| %>
       <%= select_tag "inventory",options_for_select(@inventories.map { |inv| [inv.name, inv.id] }), class: "border rounded" %>
       <%= f.submit "Generate" %>
         <% end %>
