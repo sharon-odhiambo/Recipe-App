@@ -1,7 +1,6 @@
 class RecipeController < ApplicationController
   def index
     @recipes = Recipe.where(user_id: current_user.id)
-    p @recipes
   end
 
   def destroy
@@ -33,9 +32,15 @@ class RecipeController < ApplicationController
   end
 
   def show
+    @inventories = Inventory.all
     @recipe = Recipe.find(params[:id])
-    p @recipe.public
     @recipe_food = RecipeFood.includes(:food).all.where(recipe_id: @recipe.id)
-    p @recipe_food
+  end
+
+  def remove_food
+    @recipe_food = RecipeFood.find(params[:recipe_food_id])
+    @recipe = Recipe.find(params[:recipe_id])
+    @recipe_food.destroy
+    redirect_to "/recipes/#{@recipe.id}"
   end
 end
