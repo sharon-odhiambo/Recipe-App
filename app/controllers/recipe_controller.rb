@@ -36,4 +36,11 @@ class RecipeController < ApplicationController
     @recipe = Recipe.find(params[:id])
     @recipe_food = RecipeFood.includes(:food).all.where(recipe_id: @recipe.id)
   end
+
+  def remove_food
+    @recipe_food = RecipeFood.find(params[:recipe_food_id])
+    @recipe = Recipe.find(params[:recipe_id])
+    @recipe_food.destroy
+    redirect_to "/recipes/#{@recipe.id}"
+  end
 end

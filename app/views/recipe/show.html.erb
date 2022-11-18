@@ -48,7 +48,7 @@
           <td><%=rf.food.name%></td>
           <td><%=rf.quantity%></td>
           <td>$ <%=rf.food.price%></td>
-          <td><a href="">Modify</a>&nbsp<a href="">Remove</a>
+          <td><a href="">Modify</a>&nbsp<a href='/recipes/<%=@recipe.id%>/remove/<%=rf.id%>'>Remove</a>
           </td>
         </tr>
       <%end%>
