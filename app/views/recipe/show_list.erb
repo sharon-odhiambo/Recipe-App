@@ -1,0 +1,24 @@
+<p>Shopping List</p>
+<p>Amount of food to buy: <%= @shopping.length %></p>
+<p>Total value of food needed: <%= (@shopping.map {|a| a.food.price }).inject(:+) %></p>
+<p>Recipe: <%= @recipe.id %></p>
+<p>Inventory: <%= @inventory.id %></p>
+<% if @shopping %>
+<div class="table_section">
+<table>
+  <tr>
+    <th>Food</th>
+    <th>Quantity</th>
+    <th>Price</th>
+  </tr>
+  <% @shopping.each do |rf|%>
+    <tr>
+      <td><%=rf.food.name%></td>
+      <td><%=rf.food.quantity %></td>
+      <td>$ <%=rf.food.price%></td>
+      </td>
+    </tr>
+  <%end%>
+</table>
+</div>
+<% end %>

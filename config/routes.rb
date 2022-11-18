@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get '/recipes', to: "recipe#index"
   get '/public_recipes', to: "recipe#public_recipes"
   get '/recipes/:id', to: "recipe#show"
+  get '/recipes/:id/:inventory_id', to: "recipe#show_list"
+  post '/recipes/:id', to: "recipe#create_shopping_list", as: "recipe_shopping"
   get '/new_recipe', to: "recipe#new_recipe"
   post '/add_new_recipe', to: "recipe#add_new_recipe"
   
