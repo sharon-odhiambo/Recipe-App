@@ -2,10 +2,11 @@ require 'rails_helper'
 
 RSpec.describe 'Recipe', type: :feature do
   before :each do
-    @user = User.new(name: 'Sharon', email: 'sharon@test.com', password: 123456, password_confirmation: 123456)
+    @user = User.new(name: 'Sharon', email: 'sharon@test.com', password: 123_456, password_confirmation: 123_456)
     @user.skip_confirmation!
     @user.save
-    @recipe = Recipe.create(name: 'rec1', description: 'description here', cooking_time: 12, preparation_time: 12, public: false, user_id: @user.id)
+    @recipe = Recipe.create(name: 'rec1', description: 'description here', cooking_time: 12, preparation_time: 12,
+                            public: false, user_id: @user.id)
     @food = Food.create(name: 'pasta', measurement_unit: 'gramme', price: 20)
   end
 

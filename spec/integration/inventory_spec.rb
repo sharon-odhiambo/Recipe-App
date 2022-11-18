@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe InventoryFood, type: :feature do
   before :each do
-    @user = User.new(name: 'sharon', email: 'sharon@gmail.com', password: 123456, password_confirmation: 123456)
+    @user = User.new(name: 'sharon', email: 'sharon@gmail.com', password: 123_456, password_confirmation: 123_456)
     @user.skip_confirmation!
     @user.save
     @inventory = Inventory.create(name: 'inv1', user_id: @user.id)
